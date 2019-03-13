@@ -3,20 +3,29 @@ package com.github.ipcjs.screenshottile.dialog;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.service.quicksettings.TileService;
 
 import com.github.ipcjs.screenshottile.R;
 
-import static com.github.ipcjs.screenshottile.Utils.hasRoot;
-import static com.github.ipcjs.screenshottile.Utils.p;
+import static com.github.ipcjs.screenshottile.util.Utils.hasRoot;
+import static com.github.ipcjs.screenshottile.util.Utils.p;
 
 /**
  * Created by ipcjs on 2017/8/16.
  */
 public class RootPermissionDialogFragment extends DialogFragment implements DialogInterface.OnClickListener {
+    public static void start(Context context) {
+        if (context instanceof TileService) {
+            DialogContainerActivity.Companion.startAndCollapse((TileService) context, RootPermissionDialogFragment.class, null);
+        } else {
+            DialogContainerActivity.Companion.start(context, RootPermissionDialogFragment.class, null);
+        }
+    }
     public static RootPermissionDialogFragment newInstance() {
         return new RootPermissionDialogFragment();
     }
@@ -37,7 +46,7 @@ public class RootPermissionDialogFragment extends DialogFragment implements Dial
         switch (which) {
             case Dialog.BUTTON_POSITIVE:
                 if (!hasRoot()) {
-                    TransparentContainerActivity.Companion.start(getActivity(), RootPermissionDialogFragment.class, null);
+                    RootPermissionDialogFragment.start(getActivity());
                 }
                 break;
             case Dialog.BUTTON_NEUTRAL:

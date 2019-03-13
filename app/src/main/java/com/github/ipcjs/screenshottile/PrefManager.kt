@@ -27,4 +27,8 @@ class PrefManager {
     var showCountDown: Boolean
         get() = pref.getBoolean(context.getString(R.string.pref_key_show_count_down), true)
         set(value) = pref.edit().putBoolean(context.getString(R.string.pref_key_show_count_down), value).apply()
+
+    var workMode: String
+        get() = pref.getString(context.getString(R.string.pref_key_work_mode), "")
+        set(value) = pref.edit().putString(context.getString(R.string.pref_key_work_mode), value).apply()
 }

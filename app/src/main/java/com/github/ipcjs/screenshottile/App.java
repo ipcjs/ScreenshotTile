@@ -8,6 +8,8 @@ import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.service.quicksettings.TileService;
 
+import com.github.ipcjs.screenshottile.util.Utils;
+
 /**
  * Created by ipcjs on 2017/8/17.
  */

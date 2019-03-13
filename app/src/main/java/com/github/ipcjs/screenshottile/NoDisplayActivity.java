@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.service.quicksettings.TileService;
 
-import static com.github.ipcjs.screenshottile.Utils.p;
+import com.github.ipcjs.screenshottile.util.Utils;
+
+import static com.github.ipcjs.screenshottile.util.Utils.p;
 
 public class NoDisplayActivity extends Activity {
 

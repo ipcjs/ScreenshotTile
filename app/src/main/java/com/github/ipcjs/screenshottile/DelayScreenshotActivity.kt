@@ -6,7 +6,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.service.quicksettings.TileService
 import android.view.View
-import com.github.ipcjs.screenshottile.Utils.p
+import com.github.ipcjs.screenshottile.util.Utils
+import com.github.ipcjs.screenshottile.util.Utils.p
 import kotlinx.android.synthetic.main.activity_delay.*
 
 /**

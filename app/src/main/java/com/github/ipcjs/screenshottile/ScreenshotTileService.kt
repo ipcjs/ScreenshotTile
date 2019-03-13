@@ -3,10 +3,7 @@ package com.github.ipcjs.screenshottile
 import android.content.Intent
 import android.os.IBinder
 import android.service.quicksettings.TileService
-import com.github.ipcjs.screenshottile.Utils.hasRoot
-import com.github.ipcjs.screenshottile.Utils.p
-import com.github.ipcjs.screenshottile.dialog.RootPermissionDialogFragment
-import com.github.ipcjs.screenshottile.dialog.TransparentContainerActivity
+import com.github.ipcjs.screenshottile.util.Utils.p
 
 class ScreenshotTileService : TileService() {
     private val pref by lazy { PrefManager(this) }
@@ -14,9 +11,6 @@ class ScreenshotTileService : TileService() {
     override fun onTileAdded() {
         super.onTileAdded()
         p("onTileAdded")
-        if (!hasRoot()) {
-            TransparentContainerActivity.startAndCollapse(this, RootPermissionDialogFragment::class.java, null)
-        }
     }
 
     override fun onTileRemoved() {

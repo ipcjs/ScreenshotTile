@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:entries="@array/setting_work_mode_entries"
+        android:entryValues="@array/setting_work_mode_values"
+        android:key="@string/pref_key_work_mode"
+        android:title="@string/title_work_mode"/>
     <SwitchPreference
         android:defaultValue="true"
         android:key="@string/pref_key_show_count_down"

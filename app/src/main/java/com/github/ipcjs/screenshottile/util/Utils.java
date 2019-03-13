@@ -1,7 +1,9 @@
-package com.github.ipcjs.screenshottile;
+package com.github.ipcjs.screenshottile.util;
 
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.github.ipcjs.screenshottile.BuildConfig;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

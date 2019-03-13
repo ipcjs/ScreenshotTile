@@ -51,7 +51,7 @@ class SettingDialogFragment : DialogFragment(), DialogInterface.OnClickListener 
             DialogInterface.BUTTON_POSITIVE -> {
             }
             DialogInterface.BUTTON_NEUTRAL -> {
-                ContainerActivity.start(context, SettingFragment::class.java)
+                SettingFragment.start(context)
             }
             DialogInterface.BUTTON_NEGATIVE -> {
             }
