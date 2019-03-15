@@ -3,7 +3,10 @@ package com.github.ipcjs.screenshottile.util;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.github.ipcjs.screenshottile.App;
 import com.github.ipcjs.screenshottile.BuildConfig;
+import com.github.ipcjs.screenshottile.data.AdbManager;
+import com.github.ipcjs.screenshottile.data.PrefManager;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -13,6 +16,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class Utils {
+    private static final String CMD_SCREENSHOT = "input keyevent 120";
 
     public static void p(Object... args) {
         if (!BuildConfig.DEBUG) return;
@@ -46,7 +50,16 @@ public class Utils {
     }
 
     public static int screenshot() {
-        return runOneCmdByRoot("input keyevent 120", false);
+        switch (App.getInstance().getPrefManager().getWorkMode()) {
+            case PrefManager.WORK_MODE_ROOT:
+                return runOneCmdByRoot(CMD_SCREENSHOT, false);
+            case PrefManager.WORK_MODE_WIFI_ADB:
+                AdbManager.INSTANCE.sendCmd(CMD_SCREENSHOT);
+                return 0;
+            default:
+            case PrefManager.WORK_MODE_NONE:
+                throw new IllegalStateException("unsupported work mode");
+        }
     }
 
     public static boolean hasRoot() {

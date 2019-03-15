@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.service.quicksettings.TileService;
 
 import com.github.ipcjs.screenshottile.data.PrefManager;
+import com.github.ipcjs.screenshottile.ui.SettingFragment;
 import com.github.ipcjs.screenshottile.ui.activity.DelayScreenshotActivity;
 import com.github.ipcjs.screenshottile.ui.activity.NoDisplayActivity;
 import com.github.ipcjs.screenshottile.util.Utils;
@@ -39,6 +40,10 @@ public class App extends Application {
     }
 
     public void screenshot(Context context) {
+        if (mPrefManager.getWorkMode() == PrefManager.WORK_MODE_NONE) {
+            SettingFragment.Companion.start(context);
+            return;
+        }
         int delay = mPrefManager.getDelay();
         if (mPrefManager.getShowCountDown()) {
             Intent intent;
@@ -69,6 +74,10 @@ public class App extends Application {
 
     private Handler mHandler = new Handler(Looper.getMainLooper());
     private Runnable mScreenshotRunnable;
+
+    public PrefManager getPrefManager() {
+        return mPrefManager;
+    }
 
     private class CountDownRunnable implements Runnable {
         private int mCount;

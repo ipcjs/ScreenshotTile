@@ -64,6 +64,10 @@ open class ContainerActivityStarter(private val activityClass: Class<out Activit
 
 open class ActivityStarter(private val activityClass: Class<out Activity>) {
     fun start(context: Context) {
-        context.startActivity(Intent(context, activityClass))
+        val intent = Intent(context, activityClass)
+        if (context !is Activity) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
+        context.startActivity(intent)
     }
 }

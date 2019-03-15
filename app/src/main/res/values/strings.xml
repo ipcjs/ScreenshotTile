@@ -9,6 +9,9 @@
     <string name="title_delay">Delay</string>
     <string name="title_work_mode">Working mode</string>
     <string name="title_work_mode_please_select"><font color="red">Please click here to select the working mode.</font></string>
+    <string name="dialog_generating_rsa">Generating RSA Key Pair</string>
+    <string name="dialog_title_generate_rsa_failed">Key Pair Generation Failed</string>
+    <string name="dialog_message_generate_rsa_failed">Unable to generate and save RSA key pair</string>
     <string name="more_setting">More Settings</string>
     <string name="setting_delay_entry_default">Instant</string>
     <string name="setting_delay_entry_1s">1s</string>
@@ -40,6 +43,7 @@
         <item>@string/setting_work_mode_value_root</item>
         <item>@string/setting_work_mode_value_wifi_adb</item>
     </string-array>
+    <string name="pref_key_adb_port" translatable="false">adb_port</string>
     <string name="pref_key_work_mode" translatable="false">mode</string>
     <string name="pref_key_delay" translatable="false">delays_string</string>
     <string name="pref_key_show_count_down" translatable="false">show_count_down</string>
