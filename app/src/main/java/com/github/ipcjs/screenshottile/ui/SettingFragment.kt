@@ -1,12 +1,13 @@
-package com.github.ipcjs.screenshottile.dialog
+package com.github.ipcjs.screenshottile.ui
 
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.ListPreference
 import android.preference.PreferenceFragment
-import com.github.ipcjs.screenshottile.PrefManager
 import com.github.ipcjs.screenshottile.R
+import com.github.ipcjs.screenshottile.data.PrefManager
+import com.github.ipcjs.screenshottile.ui.activity.SettingActivity
 import com.github.ipcjs.screenshottile.util.Utils
 import com.github.ipcjs.screenshottile.util.pass
 

@@ -8,6 +8,9 @@ import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.service.quicksettings.TileService;
 
+import com.github.ipcjs.screenshottile.data.PrefManager;
+import com.github.ipcjs.screenshottile.ui.activity.DelayScreenshotActivity;
+import com.github.ipcjs.screenshottile.ui.activity.NoDisplayActivity;
 import com.github.ipcjs.screenshottile.util.Utils;
 
 /**

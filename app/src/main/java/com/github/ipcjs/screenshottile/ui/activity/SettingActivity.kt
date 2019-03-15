@@ -1,8 +1,9 @@
-package com.github.ipcjs.screenshottile.dialog
+package com.github.ipcjs.screenshottile.ui.activity
 
 import android.app.Activity
 import android.app.Fragment
 import android.os.Bundle
+import com.github.ipcjs.screenshottile.ui.SettingFragment
 
 class SettingActivity : Activity() {
     companion object : ActivityStarter(SettingActivity::class.java)

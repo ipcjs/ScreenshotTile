@@ -3,6 +3,7 @@ package com.github.ipcjs.screenshottile
 import android.content.Intent
 import android.os.IBinder
 import android.service.quicksettings.TileService
+import com.github.ipcjs.screenshottile.data.PrefManager
 import com.github.ipcjs.screenshottile.util.Utils.p
 
 class ScreenshotTileService : TileService() {

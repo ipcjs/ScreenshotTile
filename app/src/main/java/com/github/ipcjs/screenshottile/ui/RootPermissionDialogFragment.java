@@ -1,4 +1,4 @@
-package com.github.ipcjs.screenshottile.dialog;
+package com.github.ipcjs.screenshottile.ui;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.service.quicksettings.TileService;
 
 import com.github.ipcjs.screenshottile.R;
+import com.github.ipcjs.screenshottile.ui.activity.DialogContainerActivity;
 
 import static com.github.ipcjs.screenshottile.util.Utils.hasRoot;
 import static com.github.ipcjs.screenshottile.util.Utils.p;

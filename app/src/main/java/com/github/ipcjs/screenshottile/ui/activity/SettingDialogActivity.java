@@ -1,9 +1,9 @@
-package com.github.ipcjs.screenshottile;
+package com.github.ipcjs.screenshottile.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.github.ipcjs.screenshottile.dialog.SettingDialogFragment;
+import com.github.ipcjs.screenshottile.ui.SettingDialogFragment;
 
 /**
  * Created by ipcjs on 2017/8/16.

@@ -1,4 +1,4 @@
-package com.github.ipcjs.screenshottile.dialog
+package com.github.ipcjs.screenshottile.ui
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -6,8 +6,8 @@ import android.app.DialogFragment
 import android.content.DialogInterface
 import android.os.Bundle
 import com.github.ipcjs.screenshottile.App
-import com.github.ipcjs.screenshottile.PrefManager
 import com.github.ipcjs.screenshottile.R
+import com.github.ipcjs.screenshottile.data.PrefManager
 
 class SettingDialogFragment : DialogFragment(), DialogInterface.OnClickListener {
     private val pref by lazy { PrefManager(context) }

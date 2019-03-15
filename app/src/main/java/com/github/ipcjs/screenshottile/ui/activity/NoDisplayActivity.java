@@ -1,4 +1,4 @@
-package com.github.ipcjs.screenshottile;
+package com.github.ipcjs.screenshottile.ui.activity;
 
 import android.app.Activity;
 import android.content.Context;

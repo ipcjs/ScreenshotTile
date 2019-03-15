@@ -1,4 +1,4 @@
-package com.github.ipcjs.screenshottile.dialog
+package com.github.ipcjs.screenshottile.ui.activity
 
 import android.app.Activity
 import android.app.DialogFragment
@@ -7,8 +7,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.service.quicksettings.TileService
-import com.github.ipcjs.screenshottile.dialog.ContainerActivityStarter.Companion.EXTRA_ARGS
-import com.github.ipcjs.screenshottile.dialog.ContainerActivityStarter.Companion.EXTRA_FNAME
+import com.github.ipcjs.screenshottile.ui.activity.ContainerActivityStarter.Companion.EXTRA_ARGS
+import com.github.ipcjs.screenshottile.ui.activity.ContainerActivityStarter.Companion.EXTRA_FNAME
 
 /**
  * Created by ipcjs on 2017/8/16.

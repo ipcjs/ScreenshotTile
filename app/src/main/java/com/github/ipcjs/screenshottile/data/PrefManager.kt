@@ -1,8 +1,9 @@
-package com.github.ipcjs.screenshottile
+package com.github.ipcjs.screenshottile.data
 
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
+import com.github.ipcjs.screenshottile.R
 
 /**
  * Created by ipcjs on 2017/8/17.

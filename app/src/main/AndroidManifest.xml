@@ -12,24 +12,24 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".NoDisplayActivity"
+            android:name=".ui.activity.NoDisplayActivity"
             android:theme="@android:style/Theme.NoDisplay"/>
         <activity
-            android:name=".DelayScreenshotActivity"
+            android:name=".ui.activity.DelayScreenshotActivity"
             android:excludeFromRecents="true"
             android:theme="@style/AppTheme.Transparent"/>
         <activity
-            android:name=".dialog.DialogContainerActivity"
+            android:name=".ui.activity.DialogContainerActivity"
             android:excludeFromRecents="true"
             android:theme="@style/AppTheme.Transparent"/>
 
         <activity
-            android:name=".dialog.ContainerActivity"
+            android:name=".ui.activity.ContainerActivity"
             android:taskAffinity="${applicationId}.ui"
             android:theme="@style/AppTheme"/>
 
         <activity
-            android:name=".dialog.SettingActivity"
+            android:name=".ui.activity.SettingActivity"
             android:launchMode="singleTask"
             android:taskAffinity="${applicationId}.ui"
             android:theme="@style/AppTheme">
@@ -43,7 +43,7 @@
         </activity>
 
         <activity
-            android:name=".SettingDialogActivity"
+            android:name=".ui.activity.SettingDialogActivity"
             android:excludeFromRecents="true"
             android:theme="@style/AppTheme.Transparent"/>
 
