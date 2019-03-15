@@ -15,7 +15,7 @@ import com.github.ipcjs.screenshottile.ui.activity.ContainerActivityStarter.Comp
  */
 
 open class ContainerActivity : Activity() {
-    companion object : ContainerActivityStarter(DialogContainerActivity::class.java)
+    companion object : ContainerActivityStarter(ContainerActivity::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +36,7 @@ open class ContainerActivity : Activity() {
 }
 
 class DialogContainerActivity : ContainerActivity() {
-    companion object : ContainerActivityStarter(ContainerActivity::class.java)
+    companion object : ContainerActivityStarter(DialogContainerActivity::class.java)
 }
 
 

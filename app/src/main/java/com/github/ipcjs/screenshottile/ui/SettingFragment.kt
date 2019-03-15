@@ -25,18 +25,18 @@ class SettingFragment : PreferenceFragment() {
     val workModePreference by lazy { findPreference(getString(R.string.pref_key_work_mode)) as ListPreference }
     val pref: SharedPreferences by lazy { preferenceManager.sharedPreferences }
     val prefManager by lazy { PrefManager(context, pref) }
-    lateinit var summaryManager: ListPreferenceSummaryManager
+    lateinit var summaryManager: PreferenceSummaryManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         addPreferencesFromResource(R.xml.pref)
-        summaryManager = ListPreferenceSummaryManager(pref).apply {
-            add(delayPreference)
-            add(workModePreference)
+        summaryManager = PreferenceSummaryManager(pref).apply {
+            addListPreference(delayPreference)
+            addPreference(workModePreference) {
+                summary = entry
+                title = getText(if (value.isNullOrEmpty()) R.string.title_work_mode_please_select else R.string.title_work_mode)
+            }
         }
-        // todo title标红
-        // if (workModePreference.value.isNullOrEmpty()) {
-//            workModePreference.title = getText(R.string.title_work_mode_please_select)
-  //      }
+
         workModePreference.setOnPreferenceChangeListener { preference, newValue ->
             when (newValue) {
                 getString(R.string.setting_work_mode_value_root) -> {
@@ -55,30 +55,7 @@ class SettingFragment : PreferenceFragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        summaryManager.destroy()
+        summaryManager.close()
     }
 
-    class ListPreferenceSummaryManager(private val pref: SharedPreferences) {
-        private val listener = SharedPreferences.OnSharedPreferenceChangeListener { sharedPreferences, key ->
-            preferenceMap[key]?.updateSummary()
-        }
-
-        init {
-            pref.registerOnSharedPreferenceChangeListener(listener)
-        }
-
-        private val preferenceMap = mutableMapOf<String, ListPreference>()
-        fun add(preference: ListPreference) {
-            preference.updateSummary()
-            preferenceMap[preference.key] = preference
-        }
-
-        private fun ListPreference.updateSummary() {
-            this.summary = this.entry
-        }
-
-        fun destroy() {
-            pref.unregisterOnSharedPreferenceChangeListener(listener)
-        }
-    }
 }
