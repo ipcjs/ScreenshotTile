@@ -13,11 +13,11 @@ android {
             }
         }
     }
-    compileSdkVersion 25
+    compileSdkVersion 26
     defaultConfig {
         applicationId "com.github.ipcjs.screenshottile"
         minSdkVersion 24
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 8
         versionName "1.1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -32,6 +32,16 @@ android {
         debug {
             applicationIdSuffix '.debug'
             versionNameSuffix '.debug'
+        }
+    }
+    flavorDimensions "store"
+    productFlavors {
+        play {
+            dimension "store"
+        }
+        github {
+            dimension "store"
+            versionName "2.0.0.alpha"
         }
     }
     // 2017-08-15 15:40:13 该方法在新版gradle中已失效...
