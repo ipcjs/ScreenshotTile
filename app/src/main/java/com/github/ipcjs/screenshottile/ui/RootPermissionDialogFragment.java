@@ -38,7 +38,7 @@ public class RootPermissionDialogFragment extends DialogFragment implements Dial
                 .setMessage(getString(R.string.dialog_obtain_root_message, getString(R.string.app_name)))
                 .setPositiveButton(R.string.dialog_reacquire, this)
                 .setNeutralButton(R.string.dialog_i_know, this)
-                .setNegativeButton(R.string.dialog_uninstall, this)
+                //.setNegativeButton(R.string.dialog_uninstall, this)
                 .create();
     }
 
