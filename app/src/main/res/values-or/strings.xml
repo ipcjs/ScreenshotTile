@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">ସ୍କ୍ରିନସଟ୍ ଟାଇଲ୍</string>
+    <string name="tile_label">ସ୍କ୍ରିନସଟ୍</string>
+    <string name="dialog_obtain_root">ରୁଟ୍ ଅନୁମତି ପାଇବାରେ ବିଫଳ ହେଲା</string>
+    <string name="dialog_obtain_root_message">Analog keys ର ସ୍କ୍ରିନସଟ୍ ପଠାଇବା ପାଇଁ %s ରୁଟ୍ ଅନୁମତି ଆବଶ୍ୟକ କରେ</string>
+    <string name="dialog_reacquire">ପୁନଃଅଧିଗ୍ରହଣ</string>
+    <string name="dialog_i_know">ମୁଁ ଜାଣେ</string>
+    <string name="dialog_uninstall">ଅନଇନଷ୍ଟଲ୍ କରନ୍ତୁ</string>
+    <string name="title_delay">ବିଳମ୍ବ</string>
+    <string name="more_setting">ଅଧିକ ସେଟିଂ</string>
+    <string name="setting_delay_entry_default">ତତକ୍ଷଣାତ୍</string>
+    <string name="setting_delay_entry_1s">୧ ସେକେଣ୍ଡ</string>
+    <string name="setting_delay_entry_2s">୨ ସେକେଣ୍ଡ</string>
+    <string name="setting_delay_entry_5s">୫ ସେକେଣ୍ଡ</string>
+    <string name="show_count_down">ଓଲଟା ଗଣନା ଦେଖାନ୍ତୁ</string>
+
+    <!-- translatable="false" -->
+    <string name="setting_delay_value_default" translatable="false">0</string>
+    <string-array name="setting_delay_entries" translatable="false">
+        <item>@string/setting_delay_entry_default</item>
+        <item>@string/setting_delay_entry_1s</item>
+        <item>@string/setting_delay_entry_2s</item>
+        <item>@string/setting_delay_entry_5s</item>
+    </string-array>
+    <string-array name="setting_delay_values" translatable="false">
+        <item>@string/setting_delay_value_default</item>
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+    </string-array>
+    <string name="pref_key_delay" translatable="false">delays_string</string>
+    <string name="pref_key_show_count_down" translatable="false">show_count_down</string>
+
+
+</resources>
