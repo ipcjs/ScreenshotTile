@@ -1,5 +1,8 @@
 package com.github.ipcjs.screenshottile.ui;
 
+import static com.github.ipcjs.screenshottile.util.Utils.hasRoot;
+import static com.github.ipcjs.screenshottile.util.Utils.p;
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -12,9 +15,6 @@ import android.service.quicksettings.TileService;
 
 import com.github.ipcjs.screenshottile.R;
 import com.github.ipcjs.screenshottile.ui.activity.DialogContainerActivity;
-
-import static com.github.ipcjs.screenshottile.util.Utils.hasRoot;
-import static com.github.ipcjs.screenshottile.util.Utils.p;
 
 /**
  * Created by ipcjs on 2017/8/16.
@@ -38,7 +38,7 @@ public class RootPermissionDialogFragment extends DialogFragment implements Dial
                 .setMessage(getString(R.string.dialog_obtain_root_message, getString(R.string.app_name)))
                 .setPositiveButton(R.string.dialog_reacquire, this)
                 .setNeutralButton(R.string.dialog_i_know, this)
-                //.setNegativeButton(R.string.dialog_uninstall, this)
+                .setNegativeButton(R.string.dialog_uninstall, this)
                 .create();
     }
 

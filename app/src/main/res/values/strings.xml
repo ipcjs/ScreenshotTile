@@ -18,8 +18,12 @@
     <string name="setting_delay_entry_2s">2s</string>
     <string name="setting_delay_entry_5s">5s</string>
     <string name="show_count_down">Show count down</string>
+    <string name="setting_work_mode_value_default" translatable="false">@string/setting_work_mode_value_root</string>
+    <string name="setting_work_mode_value_none" translatable="false"/>
     <string name="setting_work_mode_value_root" translatable="false">root</string>
     <string name="setting_work_mode_value_wifi_adb" translatable="false">wifi_adb</string>
+    <string name="setting_work_mode_entry_root">Root mode</string>
+    <string name="setting_work_mode_entry_wifi_adb">WiFi ADB mode(experimental, port 5555)</string>
 
     <!-- translatable="false" -->
     <string name="setting_delay_value_default" translatable="false">0</string>
@@ -35,9 +39,9 @@
         <item>2</item>
         <item>5</item>
     </string-array>
-    <string-array name="setting_work_mode_entries">
-        <item>Root模式</item>
-        <item>WiFi ADB模式</item>
+    <string-array name="setting_work_mode_entries" translatable="false">
+        <item>@string/setting_work_mode_entry_root</item>
+        <item>@string/setting_work_mode_entry_wifi_adb</item>
     </string-array>
     <string-array name="setting_work_mode_values">
         <item>@string/setting_work_mode_value_root</item>

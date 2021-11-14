@@ -1,46 +1,48 @@
-package com.github.ipcjs.screenshottile.ui.activity;
+package com.github.ipcjs.screenshottile.ui.activity
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.service.quicksettings.TileService;
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
+import android.service.quicksettings.TileService
+import com.github.ipcjs.screenshottile.util.Utils
+import com.github.ipcjs.screenshottile.util.Utils.p
 
-import com.github.ipcjs.screenshottile.util.Utils;
+class NoDisplayActivity : Activity() {
+    companion object {
+        const val ACTION_SCREENSHOT = "screenshot"
+        private const val EXTRA_ACTION = "action"
 
-import static com.github.ipcjs.screenshottile.util.Utils.p;
-
-public class NoDisplayActivity extends Activity {
-
-    public static final String EXTRA_SCREENSHOT = "screenshot";
-
-    public static void start(Context context, boolean screenshot) {
-        context.startActivity(newIntent(context, screenshot));
-    }
-
-    public static void startAndCollapse(TileService ts, boolean screenshot) {
-        ts.startActivityAndCollapse(newIntent(ts, screenshot));
-    }
-
-    public static Intent newIntent(Context context, boolean screenshot) {
-        Intent intent = new Intent(context, NoDisplayActivity.class);
-        intent.putExtra(EXTRA_SCREENSHOT, screenshot);
-        return intent;
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        p("NoDisplayActivity.onCreate");
-        if (getIntent().getBooleanExtra(EXTRA_SCREENSHOT, false)) {
-            Utils.screenshot();
+        fun start(context: Context, action: String?) {
+            context.startActivity(newIntent(context, action))
         }
-        finish();
+
+        @JvmStatic
+        fun startAndCollapse(ts: TileService, action: String?) {
+            ts.startActivityAndCollapse(newIntent(ts, action))
+        }
+
+        @JvmStatic
+        fun newIntent(context: Context, action: String?): Intent {
+            val intent = Intent(context, NoDisplayActivity::class.java)
+            intent.putExtra(EXTRA_ACTION, action)
+            return intent
+        }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        p("NoDisplayActivity.onDestroy");
+    override fun onCreate(savedInstanceState: Bundle) {
+        super.onCreate(savedInstanceState)
+        val action = intent.getStringExtra(EXTRA_ACTION)
+        p("NoDisplayActivity.onCreate: $action")
+        when (action) {
+            ACTION_SCREENSHOT -> Utils.screenshot()
+        }
+        finish()
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        p("NoDisplayActivity.onDestroy")
+    }
+
 }

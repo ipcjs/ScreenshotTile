@@ -20,6 +20,8 @@ class PrefManager(val context: Context, private val pref: SharedPreferences) {
     private val KEY_SHOW_COUNT_DOWN = context.getString(R.string.pref_key_show_count_down)
     private val KEY_WORK_MODE = context.getString(R.string.pref_key_work_mode)
     private val KEY_ADB_PORT = context.getString(R.string.pref_key_adb_port)
+    private val VALUE_WORK_MODE_DEFAULT = context.getString(R.string.setting_work_mode_value_default)
+    private val VALUE_WORK_MODE_NONE = context.getString(R.string.setting_work_mode_value_none)
     private val VALUE_WORK_MODE_ROOT = context.getString(R.string.setting_work_mode_value_root)
     private val VALUE_WORK_MODE_WIFI_ADB = context.getString(R.string.setting_work_mode_value_wifi_adb)
 
@@ -34,13 +36,13 @@ class PrefManager(val context: Context, private val pref: SharedPreferences) {
         set(value) = pref.edit().putBoolean(KEY_SHOW_COUNT_DOWN, value).apply()
 
     var workMode: Int
-        get() = when (pref.getString(KEY_WORK_MODE, "")) {
+        get() = when (pref.getString(KEY_WORK_MODE, VALUE_WORK_MODE_DEFAULT)) {
             VALUE_WORK_MODE_ROOT -> WORK_MODE_ROOT
             VALUE_WORK_MODE_WIFI_ADB -> WORK_MODE_WIFI_ADB
             else -> WORK_MODE_NONE
         }
         set(value) = pref.edit().putString(KEY_WORK_MODE, when (value) {
-            WORK_MODE_NONE -> ""
+            WORK_MODE_NONE -> VALUE_WORK_MODE_NONE
             WORK_MODE_ROOT -> VALUE_WORK_MODE_ROOT
             WORK_MODE_WIFI_ADB -> VALUE_WORK_MODE_WIFI_ADB
             else -> error("unsupported work mode $value")

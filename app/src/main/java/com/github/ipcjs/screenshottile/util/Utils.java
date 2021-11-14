@@ -54,6 +54,7 @@ public class Utils {
             case PrefManager.WORK_MODE_ROOT:
                 return runOneCmdByRoot(CMD_SCREENSHOT, false);
             case PrefManager.WORK_MODE_WIFI_ADB:
+                // TODO: 2021/11/14 ipcjs process connect failed...
                 AdbManager.INSTANCE.sendCmd(CMD_SCREENSHOT);
                 return 0;
             default:

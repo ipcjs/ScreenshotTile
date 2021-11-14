@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.IBinder
 import android.service.quicksettings.TileService
 import com.github.ipcjs.screenshottile.data.PrefManager
+import com.github.ipcjs.screenshottile.ui.RootPermissionDialogFragment
+import com.github.ipcjs.screenshottile.util.Utils.hasRoot
 import com.github.ipcjs.screenshottile.util.Utils.p
 
 class ScreenshotTileService : TileService() {
@@ -12,6 +14,13 @@ class ScreenshotTileService : TileService() {
     override fun onTileAdded() {
         super.onTileAdded()
         p("onTileAdded")
+        when (pref.workMode) {
+            PrefManager.WORK_MODE_ROOT -> {
+                if (!hasRoot()) {
+                    RootPermissionDialogFragment.start(this)
+                }
+            }
+        }
     }
 
     override fun onTileRemoved() {

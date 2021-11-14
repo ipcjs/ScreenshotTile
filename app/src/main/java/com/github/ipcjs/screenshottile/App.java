@@ -50,7 +50,7 @@ public class App extends Application {
             if (delay > 0) {
                 intent = DelayScreenshotActivity.Companion.newIntent(context, delay);
             } else {
-                intent = NoDisplayActivity.newIntent(context, true);
+                intent = NoDisplayActivity.newIntent(context, NoDisplayActivity.ACTION_SCREENSHOT);
             }
             if (context instanceof TileService) {
                 ((TileService) context).startActivityAndCollapse(intent);
@@ -67,7 +67,7 @@ public class App extends Application {
             }
             if (context instanceof TileService) {
                 // open a activity to collapse notification bar
-                NoDisplayActivity.startAndCollapse((TileService) context, false);
+                NoDisplayActivity.startAndCollapse((TileService) context, null);
             }
         }
     }

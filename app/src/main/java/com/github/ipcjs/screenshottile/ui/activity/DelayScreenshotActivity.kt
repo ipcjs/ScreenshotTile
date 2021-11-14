@@ -6,10 +6,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.service.quicksettings.TileService
 import android.view.View
+import android.widget.TextView
 import com.github.ipcjs.screenshottile.R
 import com.github.ipcjs.screenshottile.util.Utils
 import com.github.ipcjs.screenshottile.util.Utils.p
-import kotlinx.android.synthetic.main.activity_delay.*
 
 /**
  * Created by ipcjs on 2017/8/15.
@@ -57,6 +57,8 @@ class DelayScreenshotActivity : Activity() {
         view.removeCallbacks(countDownRunnable)
         finish()
     }
+
+    private val view by lazy { findViewById<TextView>(R.id.view) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

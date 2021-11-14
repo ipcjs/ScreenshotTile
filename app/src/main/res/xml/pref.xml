@@ -4,6 +4,7 @@
         android:entries="@array/setting_work_mode_entries"
         android:entryValues="@array/setting_work_mode_values"
         android:key="@string/pref_key_work_mode"
+        android:defaultValue="@string/setting_work_mode_value_default"
         android:title="@string/title_work_mode"/>
     <SwitchPreference
         android:defaultValue="true"
