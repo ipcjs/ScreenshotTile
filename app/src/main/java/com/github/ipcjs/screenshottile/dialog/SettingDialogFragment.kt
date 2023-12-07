@@ -33,12 +33,12 @@ class SettingDialogFragment : DialogFragment(), DialogInterface.OnClickListener 
         val values = context.resources.getStringArray(R.array.setting_delay_values)
         val checkedIndex = values.indexOf(pref.delay.toString())
         return AlertDialog.Builder(activity, theme)
-                .setSingleChoiceItems(entries, checkedIndex, { dialog: DialogInterface, which: Int ->
+                .setSingleChoiceItems(entries, checkedIndex) { _: DialogInterface, which: Int ->
                     val delay = values[which].toInt()
                     pref.delay = delay
                     App.getInstance().screenshot(context)
-                    dismiss()
-                })
+                    activity?.finish()
+                }
 //                .setPositiveButton(android.R.string.ok, this)
                 .setNeutralButton(R.string.more_setting, this)
                 .setNegativeButton(android.R.string.cancel, this)
@@ -56,10 +56,5 @@ class SettingDialogFragment : DialogFragment(), DialogInterface.OnClickListener 
             DialogInterface.BUTTON_NEGATIVE -> {
             }
         }
-    }
-
-    override fun onDismiss(dialog: DialogInterface?) {
-        super.onDismiss(dialog)
-        activity?.finish()
     }
 }
