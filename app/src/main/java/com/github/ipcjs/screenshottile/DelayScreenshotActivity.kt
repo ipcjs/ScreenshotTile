@@ -21,7 +21,7 @@ class DelayScreenshotActivity : Activity() {
         }
 
         fun startAndCollapse(ts: TileService, delay: Int) {
-            ts.startActivityAndCollapse(newIntent(ts, delay))
+            ts.startActivityAndCollapseCompat(newIntent(ts, delay))
         }
 
         fun newIntent(ctx: Context, delay: Int): Intent {

@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.service.quicksettings.TileService
+import com.github.ipcjs.screenshottile.startActivityAndCollapseCompat
 
 /**
  * Created by ipcjs on 2017/8/16.
@@ -22,7 +23,7 @@ open class TransparentContainerActivity : Activity() {
         }
 
         fun startAndCollapse(ts: TileService, fclass: Class<out DialogFragment>, args: Bundle? = null) {
-            ts.startActivityAndCollapse(newIntent(ts, TransparentContainerActivity::class.java, fclass, args))
+            ts.startActivityAndCollapseCompat(newIntent(ts, TransparentContainerActivity::class.java, fclass, args))
         }
 
         fun newIntent(ctx: Context, activityClass: Class<out Activity>, fclass: Class<out Fragment>, args: Bundle?): Intent {

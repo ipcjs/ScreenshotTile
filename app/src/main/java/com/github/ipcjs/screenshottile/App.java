@@ -43,7 +43,7 @@ public class App extends Application {
                 intent = NoDisplayActivity.newIntent(context, true);
             }
             if (context instanceof TileService) {
-                ((TileService) context).startActivityAndCollapse(intent);
+                CompatKt.startActivityAndCollapseCompat((TileService) context, intent);
             } else {
                 context.startActivity(intent);
             }

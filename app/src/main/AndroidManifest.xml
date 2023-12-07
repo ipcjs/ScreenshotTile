@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.github.ipcjs.screenshottile"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.github.ipcjs.screenshottile">
 
     <application
         android:name=".App"
@@ -11,33 +11,35 @@
         android:theme="@style/AppTheme.Transparent">
         <activity
             android:name=".NoDisplayActivity"
-            android:theme="@android:style/Theme.NoDisplay"/>
+            android:theme="@android:style/Theme.NoDisplay" />
         <activity
             android:name=".DelayScreenshotActivity"
-            android:excludeFromRecents="true"/>
+            android:excludeFromRecents="true" />
         <activity
             android:name=".dialog.TransparentContainerActivity"
-            android:excludeFromRecents="true"/>
+            android:excludeFromRecents="true" />
         <activity
             android:name=".dialog.ContainerActivity"
             android:launchMode="singleTask"
             android:taskAffinity="${applicationId}.task"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".SettingDialogActivity"
-            android:excludeFromRecents="true">
+            android:excludeFromRecents="true"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
             </intent-filter>
         </activity>
 
         <service
             android:name=".ScreenshotTileService"
+            android:exported="true"
             android:icon="@drawable/ic_stat_name"
             android:label="@string/tile_label"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
     </application>

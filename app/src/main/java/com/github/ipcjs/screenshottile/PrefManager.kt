@@ -21,7 +21,7 @@ class PrefManager {
 
 
     var delay: Int
-        get() = pref.getString(context.getString(R.string.pref_key_delay), "0").toIntOrNull() ?: 0
+        get() = pref.getString(context.getString(R.string.pref_key_delay), "0")!!.toIntOrNull() ?: 0
         set(value) = pref.edit().putString(context.getString(R.string.pref_key_delay), value.toString()).apply()
 
     var showCountDown: Boolean

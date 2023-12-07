@@ -17,7 +17,7 @@ public class NoDisplayActivity extends Activity {
     }
 
     public static void startAndCollapse(TileService ts, boolean screenshot) {
-        ts.startActivityAndCollapse(newIntent(ts, screenshot));
+        CompatKt.startActivityAndCollapseCompat(ts, newIntent(ts, screenshot));
     }
 
     public static Intent newIntent(Context context, boolean screenshot) {
